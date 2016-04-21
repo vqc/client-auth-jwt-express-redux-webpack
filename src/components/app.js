@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        Start
+        {this.props.children}
       </div>
     );
   }
