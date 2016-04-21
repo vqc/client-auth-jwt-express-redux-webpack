@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 
+//redeclare reducer variable as form
+//so that we dont have to have a reducer called reducer
+import { reducer as form } from 'redux-form';
+
 const rootReducer = combineReducers({
   /**
     auth: {
@@ -11,7 +15,7 @@ const rootReducer = combineReducers({
       error: string //display an error related to authentication has occured
     }
   **/
-  state: (state = {}) => state
+  form: form //can replace this with just 'form' because of es6
 });
 
 export default rootReducer;
