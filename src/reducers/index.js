@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 //so that we dont have to have a reducer called reducer
 import { reducer as form } from 'redux-form';
 import authReducer from './auth_reducer';
+import messageReducer from './fetch_message.js';
 
 const rootReducer = combineReducers({
   /**
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     }
   **/
   form: form, //can replace this with just 'form' because of es6
-  auth: authReducer
+  auth: authReducer,
+  message: messageReducer,
 });
 
 export default rootReducer;

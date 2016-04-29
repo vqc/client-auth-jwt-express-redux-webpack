@@ -5,12 +5,23 @@ import * as actions from '../actions';
 class Feature extends Component {
   render(){
     return (
-      <div>Feature</div>
-    )
+      <div>
+        <div>{this.props.message ?
+            this.props.message.message :
+            "Loading"}</div>
+        <div>Feature</div>
+      </div>
+    );
   }
   componentWillMount(){
     this.props.fetchMessage();
   }
 }
 
-export default connect(null, actions)(Feature);
+function mapStateToProps(state){
+  return {
+    message: state.message.message,
+  }
+}
+
+export default connect(mapStateToProps, actions)(Feature);

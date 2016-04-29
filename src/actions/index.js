@@ -4,6 +4,7 @@ import {
   AUTH_USER,
   AUTH_ERROR,
   UNAUTH_USER,
+  FETCH_MESSAGE,
 } from './types';
 
 const ROOT_URL = 'http://localhost:4040';
@@ -82,7 +83,11 @@ export function fetchMessage(){
       }
     })
       .then(response =>{
-        console.log(response.data);
+        console.log("response", response.data);
+        dispatch({
+          type: FETCH_MESSAGE,
+          payload: response.data,
+        })
       })
       .catch(response=>{
 
